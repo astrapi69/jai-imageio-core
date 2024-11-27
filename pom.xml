@@ -36,10 +36,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
+        <version>3.13.0</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>11</source>
+          <target>11</target>
+          <release>11</release>
+          <debug>false</debug>
         </configuration>
       </plugin>
       <plugin>
@@ -88,12 +90,12 @@
         <version>2.21.0</version>
         <configuration>
           <skip>false</skip>
-          <systemProperties>
+          <systemPropertyVariables>
             <property>
               <name>java.awt.headless</name>
               <value>true</value>
             </property>
-          </systemProperties>
+          </systemPropertyVariables>
         </configuration>
       </plugin>
       <plugin>
@@ -172,9 +174,8 @@
             </execution>
           </executions>
           <configuration>
-            <additionalparam>-Xdoclint:none</additionalparam>
+            <detectJavaApiLink>false</detectJavaApiLink>
             <linksource>true</linksource>
-            <protected>true</protected>
             <links>
               <link>http://docs.oracle.com/javase/8/docs/api/</link>
             </links>
